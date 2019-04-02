@@ -1,0 +1,21 @@
+<table id="customers">
+  <tr>
+    <th>Made On</th>
+    <th>Description</th>
+    <th>ID</th>
+    <th>Account ID</th>
+    <th>Amount</th>
+    <th>Currency Code</th>
+  </tr>
+  <% @transactions.each do |transaction| %>
+	  <tr>
+	    <td><%= transaction["made_on"]%></td>
+	    <td><%= transaction["description"]%></td>
+	    <td><%= transaction["id"]%></td>
+	    <td><%= transaction["account_id"]%></td>
+	    <td><%= transaction["amount"]%></td>
+	    <td><%= transaction["currency_code"]%></td>
+	  </tr>
+  <% end %>
+</table>
+<%= button_to 'Logout', destroy_user_session_path, method: :delete %>

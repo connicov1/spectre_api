@@ -1,0 +1,73 @@
+# TODO: dial this down to a reasonable number
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 170
+  AutoCorrect: false
+  Exclude:
+   - spec/**/*
+
+Style/ConditionalAssignment:
+  Enabled: true
+
+# TODO: enable and fix
+Naming/HeredocDelimiterCase:
+  Enabled: false
+
+# TODO: enable and fix
+RSpec/RepeatedDescription:
+  Enabled: false
+
+# TODO: enable and fix
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+# NOTE: not applicable to robber
+Style/AsciiComments:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+Lint/UnneededCopDisableDirective:
+  Enabled: false
+
+Lint/Syntax:
+  Enabled: false
+
+# NOTE: not applicable to robber
+Naming/ClassAndModuleCamelCase:
+  Enabled: false
+
+Layout/AlignHash:
+  Enabled: true
+  EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
+
+# NOTE: w/o this flag rails rules do not work!!!!
+Rails:
+  Enabled: true
+
+Rails/Output:
+  Enabled: true
+
+# NOTE: Disbled rules for Rails. Not relevant for robber project.
+
+Rails/Present:
+  Enabled: false
+
+Rails/SaveBang:
+  Enabled: false
+
+Rails/Presence:
+  Enabled: false
+
+Rails/HttpPositionalArguments:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false

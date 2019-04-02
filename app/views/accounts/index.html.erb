@@ -1,0 +1,21 @@
+<table id="customers">
+  <tr>
+    <th>Account ID</th>
+    <th>Account Name</th>
+    <th>Nature</th>
+    <th>Balance</th>
+    <th>Currency Code</th>
+    <th>Transactions</th>
+  </tr>
+  <% @accounts.each do |account| %>
+	  <tr>
+	    <td><%= account["id"] %></td>
+	    <td><%= account["name"] %></td>
+	    <td><%= account["nature"] %></td>
+	    <td><%= account["balance"] %></td>
+	    <td><%= account["currency_code"] %></td>
+	    <td><%= link_to 'Transactions', transactions_path(account_id: account["id"]), method: :get %></td>
+	  </tr>
+  <% end %>
+</table>
+<%= button_to 'Logout', destroy_user_session_path, method: :delete %>

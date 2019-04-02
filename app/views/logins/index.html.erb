@@ -1,0 +1,33 @@
+<table id="customers">
+  <tr>
+    <th>Login ID</th>
+    <th>Provider Name</th>
+    <th>Customer ID</th>
+    <th>Status</th>
+    <th>Accounts</th>
+    <th>Refresh</th>
+    <th>Reconnect</th>
+    <th>Delete</th>
+  </tr>
+  <% @logins.each do |login| %>
+	  <tr>
+	    <td><%= login["id"] %></td>
+	    <td><%= login["provider_name"] %></td>
+	    <td><%= login["customer_id"] %></td>
+	    <td><%= login["status"] %></td>
+	    <td><%= link_to 'Accounts', accounts_path(login_id: login["id"]), method: :get %></td>
+	    <td>
+	    	<%= link_to 'Refresh', logins_refresh_path(login_id: login["id"], customer_id: params[:customer_id]), method: :put %>
+	    </td>
+	    <td>
+	    	<%= link_to 'Reconnect', logins_reconnect_path(login_id: login["id"], customer_id: params[:customer_id]), method: :put%>
+	    </td>
+	    <td>
+	    	<%= link_to 'Delete', logins_destroy_path(login_id: login["id"], customer_id: params[:customer_id]), method: :delete %>
+	    </td>
+	  </tr>
+  <% end %>
+</table>
+<%= button_to 'Create New Login', logins_create_path(customer_id: params[:customer_id]), method: :post %>
+<%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+

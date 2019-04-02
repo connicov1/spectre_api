@@ -1,0 +1,19 @@
+<table id="customers">
+  <tr>
+    <th>Customer ID</th>
+    <th>Customer Identifier</th>
+    <th>Delete</th>
+  </tr>
+  <% @customers.each do |customer| %>
+	  <tr>
+	    <td><a href=<%= logins_path(customer_id: customer["id"]) %>><%= customer["id"] %></td>
+	    <td><%= customer["identifier"] %></td>
+	    <td>
+	    	<%= link_to 'Delete', customers_destroy_path(customer_id: customer["id"]), method: :delete %>
+	    </td>
+	  </tr>
+  <% end %>
+</table>
+
+<%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+
